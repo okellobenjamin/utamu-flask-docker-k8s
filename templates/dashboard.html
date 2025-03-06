@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UTAMU CS Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+<body class="dashboard-page">
+    <div class="container">
+        <header>
+            <div class="logo">
+                <i class="fas fa-microchip"></i> UTAMU CS Future Lab
+            </div>
+            <nav>
+                <a href="/" class="nav-link"><i class="fas fa-home"></i> Home</a>
+                <a href="/dashboard" class="nav-link active"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+            </nav>
+        </header>
+        
+        <main>
+            <h1>Student Management Dashboard</h1>
+            
+            <div class="card">
+                <h2><i class="fas fa-user-plus"></i> Add New Student</h2>
+                <div class="form-container">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" placeholder="Enter full name">
+                    </div>
+                    <div class="form-group">
+                        <label for="reg_number">Registration Number</label>
+                        <input type="text" id="reg_number" placeholder="e.g. JAN24/BCS/XXXX/TF">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" placeholder="student@example.com">
+                    </div>
+                    <button id="add-student" class="btn">Add Student</button>
+                </div>
+            </div>
+            
+            <div class="card">
+                <h2><i class="fas fa-users"></i> Student List</h2>
+                <div class="student-list">
+                    <div class="search-bar">
+                        <input type="text" id="search" placeholder="Search students...">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <table id="students-table">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>Registration Number</th>
+                                <th>Email</th>
+                                <th>Date Added</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for student in students %}
+                            <tr>
+                                <td>{{ student.id }}</td>
+                                <td>{{ student.name }}</td>
+                                <td>{{ student.reg_number }}</td>
+                                <td>{{ student.email }}</td>
+                                <td>{{ student.created_at.strftime('%Y-%m-%d') }}</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+        
+        <footer>
+            <p>Ready for containerization with Docker</p>
+            <p>&copy; 2025 UTAMU Computer Science</p>
+        </footer>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>
