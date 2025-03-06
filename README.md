@@ -236,3 +236,6 @@ Contributions to improve the application or containerization setup are welcome. 
 
 This project was developed by OKELLO BENJAMIN (JAN24/BCS/3855U/TF) for UTAMU CS Future Lab.
 
+![Screenshot 2025-03-06 110655](https://github.com/user-attachments/assets/88034454-5c3e-4c0e-9537-1533023b2cf7)
+![Screenshot 2025-03-06 110709](https://github.com/user-attachments/assets/308aeb39-8d19-46d3-aaed-0d26b84b7b03)
+
